@@ -1,21 +1,35 @@
 import { StatusBar } from 'expo-status-bar';
+import { useState } from 'react';
 import { StyleSheet, Text, View, Image, useWindowDimensions } from 'react-native';
+import MotionSlider from 'react-native-motion-slider';
+import Screens from '../components/Screens';
+
 
 
 
 export default function SlideItem({ item }) {
     const { width } = useWindowDimensions();
+
   return (
     <View style={[styles.container, { width }]}>
         <Image source = {item.image} style={[styles.image, {width, resizeMode: 'contain'}]}/>
         <View style={{flex: 0.3}}>
-        <Text style={styles.title}>{item.title}</Text>   
-        <Text style={styles.description}>{item.description}</Text>  
-        </View>   
-    </View>
+          <Text style={styles.title}>{item.title}</Text>   
+          <Text style={styles.description}>{item.description}</Text>  
+        </View>
+        <MotionSlider
+        title={'Choose your mood rating'} 
+        min={1} 
+        max={5}
+        value={2} 
+    />
+        </View>
     
   );
 }
+
+
+
 
 const styles = StyleSheet.create({
   container: {
