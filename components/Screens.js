@@ -24,33 +24,30 @@ export default function Screens() {
     <View style={styles.container}>
     <View style={{flex: 3} }>
       <FlatList 
-      data={slides} 
-      
-      renderItem={({ item,index }) => (
-      <SlideItem item = {item} /> 
-      
-      
-      )}
-      
-      horizontal
-      pagingEnabled
-      showsHorizontalScrollIndicator = {false}
-      bounces = {false}
-      keyExtractor={ (item) => item.id}
-      onScroll={Animated.event([{nativeEvent: { contentOffset: {x: scrollX } } }], {
-        useNativeDriver: false,
-      })}
-      onViewableItemsChanged = {viewableItemsChanged}
-      scrollEventThrottle = {32}
-      viewabilityConfig={viewConfig}
-      ref={slidesRef}
-      
-        />
-      </View>
+        data={slides} 
 
+        renderItem={({ item,index }) => {
+         return <SlideItem item = {item} /> 
+        }}
+        horizontal
+        pagingEnabled
+        showsHorizontalScrollIndicator = {false}
+        bounces = {false}
+        keyExtractor={ (item) => item.id}
+        onScroll={Animated.event([{nativeEvent: { contentOffset: {x: scrollX } } }], {
+          useNativeDriver: false,
+        })}
+        onViewableItemsChanged = {viewableItemsChanged}
+        scrollEventThrottle = {32}
+        viewabilityConfig={viewConfig}
+        ref={slidesRef}
+        />
+
+      </View>
       <Pageindicator data={slides} scrollX={scrollX} />
       <StatusBar style="auto" />      
-    </View>
+      </View>
+
     
     
   );
