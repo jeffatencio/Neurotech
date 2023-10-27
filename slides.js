@@ -3,11 +3,11 @@ export default [
         id: '1',
         title: 'How Are You Feeling Today?',
         description: 'Drag slider to mood',
-        image: require('./assets/images/brainy.png'),
+        image: require('./assets/images/mood.png'),
     },
     {
         id: '2',
-        title: 'Lorem ipsum dolor sit ametdsdsdsd',
+        title: 'How was your day today?',
         description: 'Lorem ipsum',
         image: require('./assets/images/brainy.png'),
     },
